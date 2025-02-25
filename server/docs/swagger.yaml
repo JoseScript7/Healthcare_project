@@ -1,0 +1,125 @@
+openapi: 3.0.0
+info:
+  title: Healthcare Inventory Management API
+  version: 1.0.0
+  description: API documentation for Healthcare Inventory Management System
+
+servers:
+  - url: http://localhost:5000/api
+    description: Development server
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    User:
+      type: object
+      properties:
+        user_id:
+          type: string
+          format: uuid
+        email:
+          type: string
+        role:
+          type: string
+          enum: [admin, staff, manager]
+        facility_id:
+          type: string
+          format: uuid
+
+    Facility:
+      type: object
+      properties:
+        facility_id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        type:
+          type: string
+        location:
+          type: string
+        status:
+          type: string
+          enum: [active, inactive]
+
+paths:
+  /auth/login:
+    post:
+      summary: User login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                  user:
+                    $ref: '#/components/schemas/User'
+
+  /facilities:
+    get:
+      security:
+        - BearerAuth: []
+      summary: Get all facilities
+      responses:
+        '200':
+          description: List of facilities
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Facility'
+
+  /inventory:
+    get:
+      security:
+        - BearerAuth: []
+      summary: Get inventory items
+      parameters:
+        - in: query
+          name: category
+          schema:
+            type: string
+        - in: query
+          name: search
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of inventory items
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    item_id:
+                      type: string
+                      format: uuid
+                    name:
+                      type: string
+                    category:
+                      type: string
+                    quantity:
+                      type: integer 

@@ -1,0 +1,235 @@
+.transfer-list-container {
+  padding: 20px;
+}
+
+.transfer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.create-transfer-btn {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.create-transfer-btn:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.transfer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.transfer-card {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.transfer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  color: white;
+}
+
+.transfer-date {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+}
+
+.transfer-content h3 {
+  margin: 0 0 8px 0;
+  color: var(--color-text-dark);
+}
+
+.quantity {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 8px 0;
+}
+
+.facility-info {
+  margin: 12px 0;
+  padding: 8px;
+  background: var(--color-background-light);
+  border-radius: 4px;
+}
+
+.facility-info p {
+  margin: 4px 0;
+  color: var(--color-text);
+}
+
+.requester {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-top: 12px;
+}
+
+.approve-btn, .complete-btn {
+  width: 100%;
+  padding: 8px;
+  margin-top: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.approve-btn {
+  background-color: var(--color-success);
+  color: white;
+}
+
+.complete-btn {
+  background-color: var(--color-info);
+  color: white;
+}
+
+.approve-btn:hover {
+  background-color: var(--color-success-dark);
+}
+
+.complete-btn:hover {
+  background-color: var(--color-info-dark);
+}
+
+/* Transfer Form Styles */
+.transfer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: var(--color-text-dark);
+}
+
+.form-group select,
+.form-group input,
+.form-group textarea {
+  padding: 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.form-actions button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.form-actions button.primary {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+}
+
+.form-actions button:not(.primary) {
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+}
+
+.transfer-history {
+  margin-top: 24px;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.history-timeline {
+  position: relative;
+  margin-top: 20px;
+  padding-left: 24px;
+}
+
+.history-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-border);
+}
+
+.history-item {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -28px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  border: 2px solid white;
+}
+
+.history-content {
+  background: var(--color-background-light);
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.history-date {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+}
+
+.action-by {
+  font-weight: 500;
+  margin: 4px 0;
+}
+
+.history-notes {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  font-style: italic;
+} 
