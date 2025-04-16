@@ -1,0 +1,698 @@
+.orders-container {
+  padding: 24px;
+  background-color: #f8f9fa;
+}
+
+.orders-tabs {
+  margin-bottom: 24px;
+  border-bottom: 2px solid #e1e4e8;
+}
+
+.tab {
+  padding: 12px 24px;
+  margin-right: 8px;
+  border: none;
+  background: none;
+  font-size: 16px;
+  color: #4a5568;
+  cursor: pointer;
+  position: relative;
+}
+
+.tab.active {
+  color: #4461F2;
+  font-weight: 500;
+}
+
+.tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #4461F2;
+}
+
+.orders-table {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.status-badge.in-transit {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.status-badge.processing {
+  background-color: #fff3e0;
+  color: #f57c00;
+}
+
+.status-badge.delivered {
+  background-color: #e8f5e9;
+  color: #388e3c;
+}
+
+.track-btn {
+  padding: 6px 12px;
+  border: 1px solid #4461F2;
+  background-color: transparent;
+  color: #4461F2;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.track-btn:hover {
+  background-color: #4461F2;
+  color: white;
+}
+
+.predictions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.prediction-category {
+  background-color: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.orders-page {
+  padding: 20px;
+}
+
+.orders-header {
+  margin-bottom: 20px;
+}
+
+.orders-header h1 {
+  margin-bottom: 16px;
+  color: #2d3748;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: #f0f0f0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab.active {
+  background: #007bff;
+  color: white;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background: #f8f9fa;
+  font-weight: 600;
+}
+
+/* Status and Priority Badges */
+.status-badge {
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  font-weight: 500;
+}
+
+.status-badge.processing { background: #fff3cd; color: #856404; }
+.status-badge.in-transit { background: #cce5ff; color: #004085; }
+.status-badge.out-for-delivery { background: #d4edda; color: #155724; }
+.status-badge.delivered { background: #d1e7dd; color: #0f5132; }
+
+.priority-badge {
+  padding: 3px 8px;
+  border-radius: 8px;
+  font-size: 0.85em;
+}
+
+.priority-badge.high { background: #dc3545; color: white; }
+.priority-badge.medium { background: #ffc107; color: #000; }
+.priority-badge.low { background: #28a745; color: white; }
+
+/* AI Insights Styles */
+.ai-insights-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.insight-card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.insight-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.methodology {
+  color: #666;
+  font-size: 0.9em;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.prediction-detail {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.forecast-periods {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.period {
+  text-align: center;
+  padding: 10px;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.period span {
+  display: block;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.period strong {
+  display: block;
+  font-size: 1.2em;
+  color: #2c3e50;
+  margin-top: 5px;
+}
+
+.confidence {
+  margin: 15px 0;
+}
+
+.confidence-bar {
+  height: 4px;
+  background: #007bff;
+  border-radius: 2px;
+  margin-top: 5px;
+}
+
+.factors-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.factor-card {
+  padding: 10px;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.factor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.trend-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.trend-indicator.positive { background: #28a745; }
+.trend-indicator.stable { background: #ffc107; }
+.trend-indicator.negative { background: #dc3545; }
+
+.impact-bar {
+  height: 4px;
+  background: #007bff;
+  border-radius: 2px;
+  margin: 5px 0;
+}
+
+.quality-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.85em;
+}
+
+.quality-badge.passed { background: #d4edda; color: #155724; }
+.quality-badge.conditional-pass { background: #fff3cd; color: #856404; }
+
+.storage-conditions {
+  font-family: monospace;
+  background: #f8f9fa;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.risk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.risk-card {
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.risk-indicator,
+.impact-indicator {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  margin: 5px 0;
+}
+
+.risk-indicator.low { background: #d4edda; color: #155724; }
+.risk-indicator.medium { background: #fff3cd; color: #856404; }
+.risk-indicator.high { background: #f8d7da; color: #721c24; }
+
+.indicators {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.indicator {
+  background: #e9ecef;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+/* Supplier Metrics */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.metric {
+  text-align: center;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.metric label {
+  display: block;
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.metric .value {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.trend {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  margin: 5px auto;
+}
+
+.trend.improving { border-bottom: 5px solid #28a745; }
+.trend.declining { border-top: 5px solid #dc3545; }
+.trend.stable { border-bottom: 5px solid #ffc107; }
+
+/* Anomaly Detection */
+.finding-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.severity-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: 6px;
+}
+
+.severity-indicator.high { background: #dc3545; }
+.severity-indicator.medium { background: #ffc107; }
+.severity-indicator.low { background: #28a745; }
+
+/* Cost Optimization */
+.cost-insight {
+  margin-bottom: 15px;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.insight-metrics {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.insight-metrics span {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+.insight-metrics .savings { background: #d1e7dd; color: #0f5132; }
+.insight-metrics .implementation { background: #cfe2ff; color: #084298; }
+.insight-metrics .risk { background: #fff3cd; color: #856404; }
+
+.orders-modern-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f6f9fc 0%, #f1f4f9 100%);
+  padding: 2rem;
+}
+
+.orders-navigation {
+  display: flex;
+  gap: 1rem;
+  background: white;
+  padding: 0.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-btn.active {
+  background: linear-gradient(135deg, #4461F2 0%, #6C8BF5 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(68, 97, 242, 0.25);
+}
+
+.nav-btn:hover:not(.active) {
+  background: #f1f5f9;
+  color: #4461F2;
+}
+
+.refresh-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background: white;
+  color: #4461F2;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.refresh-btn:hover {
+  background: #4461F2;
+  color: white;
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Modern Cards Layout */
+.orders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.order-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.order-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* AI Insights Section */
+.insights-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.insight-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.insight-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4461F2, #6C8BF5);
+}
+
+.trend-graph {
+  height: 200px;
+  margin: 1rem 0;
+  position: relative;
+  background: linear-gradient(180deg, rgba(68, 97, 242, 0.1) 0%, rgba(68, 97, 242, 0) 100%);
+  border-radius: 8px;
+}
+
+.confidence-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.confidence-bar {
+  flex-grow: 1;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.confidence-level {
+  height: 100%;
+  background: linear-gradient(90deg, #4461F2, #6C8BF5);
+  transition: width 0.3s ease;
+}
+
+/* Health Trends Section */
+.health-trends {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.trend-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.metric-card {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4461F2;
+  margin: 0.5rem 0;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: slideIn 0.3s ease forwards;
+}
+
+/* Add these to your existing CSS */
+.medicine-link {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+  text-decoration: underline;
+}
+
+.medicine-link:hover {
+  color: #0056b3;
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* ... rest of your modal styles ... */
+
+.share-chart {
+  margin-top: 15px;
+}
+
+.share-bar {
+  margin-bottom: 10px;
+}
+
+.share-bar .bar {
+  background: #007bff;
+  color: white;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.risk-level {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  margin: 5px 0;
+}
+
+.risk-level.high { background: #dc3545; color: white; }
+.risk-level.medium { background: #ffc107; color: #000; }
+.risk-level.low { background: #28a745; color: white; }
+
+.risk-details {
+  margin: 10px 0;
+  font-size: 0.9em;
+}
+
+.mitigation {
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 10px;
+} 
